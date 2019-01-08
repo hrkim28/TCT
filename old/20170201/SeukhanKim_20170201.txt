@@ -1,0 +1,29 @@
+package com.lcptest;
+
+import java.util.Random;
+
+public class Test0201 {
+
+	
+	static int DiceGame() {
+		int num1,num2,sum;
+		
+		Random random = new Random();
+		
+		num1 = random.nextInt(6)+1;
+		num2 = random.nextInt(6)+1;
+		System.out.println("a : "+num1+", b : "+num2);
+		
+		sum = num1 + num2;
+		
+		if (num1 == num2) sum += DiceGame();
+		
+		return sum;
+	}	
+
+	public static void main (String arg[]) throws Exception  {
+		System.out.println( DiceGame() );
+	}
+	
+
+}
