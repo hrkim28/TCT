@@ -1,3 +1,0 @@
-﻿Visual Studio Code Test 입니다.
-
-Commit Test 입니다.
