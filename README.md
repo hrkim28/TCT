@@ -26,4 +26,14 @@ $git config --global user.email "khr76693@lgcns.com"
 $git clone "https://github.com/hrkim28/TCT.git"
 ~~~
 
-***
+#### 1-5) git commit
+![참고1. Add file](https://github.com/hrkim28/TCT/blob/master/img/git_add.JPG?raw=true)
+![참고2. Commit](https://github.com/hrkim28/TCT/blob/master/img/git_commit.JPG?raw=true)
+
+~~~
+$git add 파일명
+
+$git commit -m "commit message를 입력하시면 됩니다."
+
+$git push
+~~~
