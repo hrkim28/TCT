@@ -8,7 +8,7 @@ import java.util.Random;
 public class SoSoonOne_20170216 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub test
 		
 		long input = 100;
 		long count = 0;
