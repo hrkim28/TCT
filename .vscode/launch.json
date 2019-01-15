@@ -1,0 +1,53 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TCT_20190115_SoSoonOne",
+            "request": "launch",
+            "mainClass": "TCT_20190115_SoSoonOne",
+            "projectName": "TCT_dbbd203e"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - sosoonone_20190114",
+            "request": "launch",
+            "mainClass": "sosoonone_20190114",
+            "projectName": "TCT_dbbd203e"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - commit_test_KimSeongMo",
+            "request": "launch",
+            "mainClass": "commit_test_KimSeongMo",
+            "projectName": "TCT_dbbd203e"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - soononeso_20190114",
+            "request": "launch",
+            "mainClass": "soononeso_20190114"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SoSoonOne_20170207",
+            "request": "launch",
+            "mainClass": "com.test02.SoSoonOne_20170207"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SoSoonOne_20170209",
+            "request": "launch",
+            "mainClass": "com.test02.SoSoonOne_20170209"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LeeJinKyoung_20170228",
+            "request": "launch",
+            "mainClass": "helper.LeeJinKyoung_20170228"
+        }
+    ]
+}
