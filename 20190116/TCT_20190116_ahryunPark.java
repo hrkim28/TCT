@@ -71,8 +71,8 @@ public class TCT_20190116_ahryunPark{
 			int resultSum = 0;
 			for(int i=0; i< workList.size(); i++){
 				if(workList.get(i) != 0) {
-					double result = (double)workList.get(i);
-					resultSum = resultSum + (int)Math.pow(result, result);
+					int result = workList.get(i);
+					resultSum = resultSum + (int)Math.pow(result, 2);
 				}
 				
 			}
