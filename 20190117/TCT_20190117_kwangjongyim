@@ -1,0 +1,35 @@
+  public static void main(String[] args) {
+		try {
+			printResult(getResult(12));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static int getResult(int inputNo) throws Exception {
+		int resultCnt = 0;
+		int firstNo = 3;
+		int secondNo = 3;
+		int thirdNo = 3;
+		
+		if(inputNo < 9 || inputNo > 3000 || inputNo%3 != 0) {
+			throw new Exception("input 값이 잘못되었습니다.");
+		}
+		
+		for(firstNo = 3; firstNo <= inputNo - 6; firstNo += 3) { // 첫번째 자리수 
+			for(secondNo = 3; secondNo <= inputNo - 6; secondNo += 3) { // 두번째 자리수
+				for(thirdNo = 3; thirdNo <= inputNo - 6; thirdNo += 3) { // 세번째 자리수
+					if(firstNo + secondNo + thirdNo == inputNo) {
+						resultCnt++;
+					}
+				}
+			}
+		}
+		return resultCnt;
+	}
+	
+	public static void printResult(int resultCnt) {
+		System.out.println(resultCnt);
+	}
+	
