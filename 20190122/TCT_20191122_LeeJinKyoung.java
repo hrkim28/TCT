@@ -30,14 +30,14 @@ public class TCT_20191122_LeeJinKyoung {
             //System.out.println(score);
         } else {
             if(n == 1){
-                //위 계단을 밝은 경우 아래 계단을 밝지 않을 수 있다.
+                //위 계단을 밟은 경우 아래 계단을 밟지 않을 수 있다.
                 getCase(0,index-1,result,steps);
     
-                //위 계단을 밝은 경우 아래 계단을 밝을 수 있지만 3계단을 연속해서 밝을 수 없다.
+                //위 계단을 밟은 경우 아래 계단을 밟을 수 있지만 3계단을 연속해서 밟을 수 없다.
                 if( result.length -1 == index || result[index + 1] != 1){
                     getCase(1,index-1,result,steps);
                 }
-            } else if(n == 0) { //위 계단을 밝지 않은 경우 아래 계단은 밝는다.
+            } else if(n == 0) { //위 계단을 밟지 않은 경우 아래 계단은 밟는다.
                 getCase(1,index-1,result,steps);
             }
         }
