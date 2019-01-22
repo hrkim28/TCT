@@ -28,8 +28,6 @@ while(i<n-3):
         temp2=i
     #연속으로 두개를 선택하면 그 이후값 제거
 
-    print(i)
-    print(temp2 - temp1)
     i=temp2
     if (temp2 - temp1 == 1):
         i = i + 1
