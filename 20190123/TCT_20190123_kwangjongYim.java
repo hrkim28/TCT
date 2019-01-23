@@ -15,8 +15,11 @@ public static void main(String[] args) {
 		int result = 0;
 		
 		List<Integer> odds = new ArrayList<Integer>();
-		
-		for(int i : binary) { // 하나의 문자열로 만듬
+		/*
+	       잘못만들었네요. 추후에 수정하겠습니다.
+	       전제: 1-9 사이 숫자만 아래와 같이 처리 가능...
+		*/
+		for(int i : binary) { // 하나의 문자열로 만듬 
 			sBinary += i;	
 		}
 		for(int i : binary) {
