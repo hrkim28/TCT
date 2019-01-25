@@ -13,8 +13,8 @@ for n in num_list:
     else:
         xor_list.append(n)
 
-xor_result = xor_list[0]
+xor_result = 0
 for x in xor_list:
-    xor_result = xor_result | x
+    xor_result = xor_result ^ x
 
 print (xor_result)
