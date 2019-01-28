@@ -12,10 +12,10 @@ public class TCT_20190128_LeeJinKyoung {
      */
     private static void countAphabet(String str){
         //알파벳 아스키 코드
-        int upperA = 65; //"A"
-        int lowerA = 97; //"a"
+        int upperA = (int)'A'; //"A"
+        int lowerA = (int)'a'; //"a"
         
-        int aphabet = 24; //알파벳 갯수
+        int aphabet = (int)'z' - (int)'a' -1; //알파벳 갯수
         
         int [] strAscii = new int[aphabet];
         
@@ -23,7 +23,7 @@ public class TCT_20190128_LeeJinKyoung {
         for(int inx = 0; inx < str.length(); inx++){
             int charAscii = (int)str.charAt(inx);
             
-            if(charAscii < 97){
+            if(charAscii < lowerA){
                 charAscii += (lowerA - upperA);
             }
             
