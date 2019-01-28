@@ -19,10 +19,6 @@ $git init
 
 $git config --global user.name "계정명"
 $git config --global user.email "가입시 사용한 메일주소"
-
-(예시) - 팀원 분들 세팅 완료되시면 해당 계정 정보 삭제하겠습니다.
-$git config --global user.name "hrkim28"
-$git config --global user.email "khr76693@lgcns.com" 
 ~~~
 
 #### 1-4) git bash > git clone을 통해 git repository 저장소 clone  
