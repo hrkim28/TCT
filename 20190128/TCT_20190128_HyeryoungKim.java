@@ -7,19 +7,19 @@ public class TCT_20190128_HyeryoungKim {
         TCT_20190128_HyeryoungKim tct = new TCT_20190128_HyeryoungKim();
 
         String input1 = "I think I'm lost.";
-        System.out.println("[Case1] " + input1 + " / [°á°ú] " + tct.getMostUsedAlphabet(input1));
+        System.out.println("[Case1] " + input1 + " / [ê²°ê³¼] " + tct.getMostUsedAlphabet(input1));
 
         String input2 = "I think I'm lost.I can't tell.";
-        System.out.println("[Case2] " + input2 + " / [°á°ú] " + tct.getMostUsedAlphabet(input2));
+        System.out.println("[Case2] " + input2 + " / [ê²°ê³¼] " + tct.getMostUsedAlphabet(input2));
 
         String input3 = "I think I'm lost. I can't tell what's where.";
-        System.out.println("[Case3] " + input3 + " / [°á°ú] " + tct.getMostUsedAlphabet(input3));
+        System.out.println("[Case3] " + input3 + " / [ê²°ê³¼] " + tct.getMostUsedAlphabet(input3));
         
         String input4 = "My youth is yours. Truth so loud, you can't ignore.";
-        System.out.println("[Case4] " + input4 + " / [°á°ú] " + tct.getMostUsedAlphabet(input4));
+        System.out.println("[Case4] " + input4 + " / [ê²°ê³¼] " + tct.getMostUsedAlphabet(input4));
         
         String input5 = ".......,,,,,1222223^^^^^Test   ";
-        System.out.println("[Case5] " + input5 + " / [°á°ú] " + tct.getMostUsedAlphabet(input5));
+        System.out.println("[Case5] " + input5 + " / [ê²°ê³¼] " + tct.getMostUsedAlphabet(input5));
     }
     
     public String getMostUsedAlphabet(String input) {
@@ -32,8 +32,9 @@ public class TCT_20190128_HyeryoungKim {
         for ( int idx = 0 ; idx < str.length() ; idx++ ) {
         	String alpha = str.substring(idx, idx+1);
         	if ( isOnlyAlphabet(alpha) ) {
-        		if ( idx == 0 ) map.put(alpha, 1);
-            	else {
+        		if ( idx == 0 ) {
+        			map.put(alpha, 1);
+        		} else {
             		if ( map.containsKey(alpha) ) {
             			int cnt = map.get(alpha) + 1;
             			map.put(alpha, cnt);
