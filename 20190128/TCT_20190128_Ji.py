@@ -3,7 +3,6 @@
 str1 = str(input("input text : "))
 str1 = str1.lower()
 
-#print (str1.count("i"))
 dict = {}
 
 for c in str1[0:] :
