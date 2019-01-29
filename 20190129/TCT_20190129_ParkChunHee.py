@@ -10,6 +10,7 @@ def printCalculateProcedure(str):
 
 def calc(strList):
     tmp = 0;
+    printStr = ""
     # * / 부터 연산
     if '*' in strList or '/' in strList:
         for j in range(len(strList)):
@@ -33,7 +34,13 @@ def calc(strList):
     del strList[j-1:j+1:1]
     # 계산 값 삽입
     strList[j-1] = tmp
-    print(strList)
+
+    #출력용 문자열 변수에 담는다
+    for i in range(len(strList)):
+        printStr+=str(strList[i])
+
+    #출력
+    print(printStr)
 
     # 연산자가 하나도 없을때 까지 호출
     if '*' in strList or '/' in strList or '+' in strList or '-' in strList:
