@@ -1,5 +1,4 @@
 
-
 def printCalculateProcedure(str):
     strList = []
 
@@ -16,28 +15,24 @@ def calc(strList):
         for j in range(len(strList)):
             if strList[j] == "*" or strList[j] == "/":
                 if  strList[j] == "*":
-                    tmp =   int(strList[j-1]) * int(strList[j+1])
-                    del strList[j - 1:j + 1:1]
-                    strList[j - 1] = tmp
+                    tmp = int(strList[j-1]) * int(strList[j+1])
                     break
                 else:
                     tmp = int(strList[j-1]) / int(strList[j+1])
-                    del strList[j - 1:j + 1:1]
-                    strList[j - 1] = tmp
                     break
     else:
         for j in range(len(strList)):
             if strList[j] == "+" or strList[j] == "-":
                 if  strList[j] == "+":
-                    tmp =   int(strList[j-1]) + int(strList[j+1])
-                    del strList[j - 1:j + 1:1]
-                    strList[j - 1] = tmp
+                    tmp = int(strList[j-1]) + int(strList[j+1])
                     break
                 else:
                     tmp = int(strList[j-1]) - int(strList[j+1])
-                    del strList[j - 1:j + 1:1]
-                    strList[j - 1] = tmp
                     break
+    # 계산 끝낸 값 제거
+    del strList[j-1:j+1:1]
+    # 계산 값 삽입
+    strList[j-1] = tmp
     print(strList)
 
     # 연산자가 하나도 없을때 까지 호출
