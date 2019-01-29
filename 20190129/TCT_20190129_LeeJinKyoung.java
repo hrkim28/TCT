@@ -9,7 +9,7 @@ public class TCT_20190129_LeeJinKyoung {
         
         test.calucator( "9+5-4+8" );
         test.calucator( "5+6*3-6/2+5" );
-        test.calucator( "(5+6)*3-6/2+5" );
+        test.calucator( "15+6*3-6/2+5" );
     }
 
     /**
