@@ -28,6 +28,6 @@ while len(inputList) > 1:
             del inputList[minusIndex - 1:minusIndex + 2]
             inputList.insert(minusIndex - 1, str(calValue))
     else:
-        break;
+        break
 
     print("".join(inputList))
