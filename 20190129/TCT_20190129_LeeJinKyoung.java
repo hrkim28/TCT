@@ -9,17 +9,25 @@ public class TCT_20190129_LeeJinKyoung {
         
         test.calucator( "9+5-4+8" );
         test.calucator( "5+6*3-6/2+5" );
+        test.calucator( "15+6*3-6/2+5" );
     }
 
     /**
      *
      * @param str
      */
-    private void calucator(String str){
+    private void calucator(String input){
         Stack<String> num = new Stack<String>();
+
+        String[] arNum = input.split("[+]|[*]|[-]|[/]");
+        String[] arCalcVar = input.split("[0-9]+");
         
-        for(int inx = str.length() -1 ; inx >= 0; inx --){
-            num.push(String.valueOf(str.charAt(inx)));
+        for(int inx = arNum.length-1; inx >=0; inx-- ){
+            num.push(arNum[inx]);
+            
+            if(!"".equals(arCalcVar[inx])){
+                num.push(arCalcVar[inx]);
+            }
         }
         
         print(num);
