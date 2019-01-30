@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class TCT_20190130_KimSeongMo {
     public static void main(String[] args){
         TCT_20190130_KimSeongMo obj = new TCT_20190130_KimSeongMo();
+        int[][] reward18 = { {500,1}, {300,2}, {200,3}, {50,4}, {30,5}, {10,6} };
+        int[][] reward19 = { {512,1}, {256,2}, {128,4}, {64,8}, {32,16} };
+        
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.nextLine();
@@ -19,48 +22,21 @@ public class TCT_20190130_KimSeongMo {
         }
         
         for( Integer[] arr : inputList ){
-        System.out.println( obj.getResult(arr[0], arr[1]) );
+        System.out.println( obj.getReward(reward18, arr[0]) + obj.getReward(reward19, arr[1]) );
         }
     }
     
-    private  int getResult( int firstRank, int secondRank ){
-        int firstResult = 0;
-        int secondResult = 0;
-        
-        if(firstRank==0){
-            firstResult = 0;
-        }else if(firstRank == 1){
-            firstResult = 5000000;
-        }else if(firstRank <= 3){
-            firstResult = 3000000;
-        }else if(firstRank <= 6){
-            firstResult = 2000000;
-        }else if(firstRank <= 10){
-            firstResult = 500000;
-        }else if(firstRank <= 15){
-            firstResult = 300000;
-        }else if(firstRank <= 21){
-            firstResult = 100000;
-        }else{
-            firstResult = 0;
+    private  int getReward( int[][] reward, int rank ){
+        int cnt = 0;
+        int result = 0;
+        if(rank > 0){
+            for( int inx = 0; inx < reward.length; inx++ ){
+                cnt += reward[inx][1];
+                if( cnt >= rank ) {
+                    result = reward[inx][0] * 10000; break;
+                }
+            }
         }
-        
-        if(secondRank==0){
-            secondResult = 0;
-        }else if(secondRank == 1){
-            secondResult = 5120000;
-        }else if(secondRank <= 3){
-            secondResult = 2560000;
-        }else if(secondRank <= 7){
-            secondResult = 1280000;
-        }else if(secondRank <= 15){
-            secondResult = 640000;
-        }else if(secondRank <= 31){
-            secondResult = 320000;
-        }else{
-            secondResult = 0;
-        }
-        
-        return firstResult + secondResult;
+        return result;
     }
 }
