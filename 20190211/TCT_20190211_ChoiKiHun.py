@@ -24,7 +24,7 @@ for i in crypt :
 			print('FAKE')
 			break
 
-	index += 1
+	index += 1 
 	
 if len(crypt) == index :
 	print('OK')
