@@ -26,6 +26,6 @@ for i in crypt :
 
 	index += 1
 	
-if len(crypt) == index + 1 :
+if len(crypt) == index :
 	print('OK')
 	
