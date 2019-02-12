@@ -67,12 +67,12 @@ public class TCT_20190212_LeeJinKyoung {
 			else {
 				for(int jnx = 9 ; jnx >= 0; jnx--) {
 				
-				int temp = result + jnx*(int)Math.pow(10, inx);
-				if(!usedNums.contains(jnx) && temp <= input) {
-					selNum = jnx;
-					break;
+					int temp = result + jnx*(int)Math.pow(10, inx);
+					if(!usedNums.contains(jnx) && temp <= input) {
+						selNum = jnx;
+						break;
+					}
 				}
-			}
 			}
 			result = result + selNum*(int)Math.pow(10, inx);
 			
