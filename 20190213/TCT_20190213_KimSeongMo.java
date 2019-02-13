@@ -19,7 +19,7 @@ public class TCT_20190213_KimSeongMo {
     private int getMinimumCaculation(int input){
         this.minimumCalcuation = Integer.MAX_VALUE;
         this.findCalcCombination(input, 0);
-        return minimumCalcuation;
+        return this.minimumCalcuation;
     }
     
     private void findCalcCombination( int input, int caculationCount ){
