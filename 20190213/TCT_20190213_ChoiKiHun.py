@@ -15,6 +15,8 @@ while digit > 1 :
 		digit = digit / 3
 	elif digit % 2 == 0 :
 		digit = digit / 2
+	else :
+		digit = digit - 1
 		
 	count = count + 1
 		
