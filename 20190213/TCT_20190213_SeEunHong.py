@@ -8,10 +8,12 @@ cnt =0
 while num != 1 :
     rmd = num % 3
     if rmd == 0 :
-        cnt = cnt +1
         num = num//3
-    else :
-        cnt = cnt +rmd
+    elif rmd == 1 :
         num = num-rmd
+    elif rmd == 2 :
+        num = num//2
+
+    cnt = cnt + 1
 
 print(cnt)
