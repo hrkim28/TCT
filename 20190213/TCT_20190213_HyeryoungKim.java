@@ -10,11 +10,17 @@ public class TCT_20190213_HyeryoungKim {
         System.out.println("숫자를 입력하세요.");
         int input = sc.nextInt();
         
-        tct.getMinCount(input, 0);
+        // 10 -> 3
+        // 30 -> 4
+        // 17 -> 5
+        tct.getMinCount(input, 0, false);
         sc.close();
     }
 
-    private void getMinCount(int input, int cnt) {
+    /**
+     * -1이 연속으로 나오면 최소값이 될 수 없음
+     */
+    private void getMinCount(int input, int cnt, boolean prevMinus) {
     	int answer = input;
     	if ( answer == 1 ) {
     		min = cnt;
@@ -24,17 +30,21 @@ public class TCT_20190213_HyeryoungKim {
     		
     		if ( answer%2 != 0 && answer%3 != 0 ) {
     			answer = answer - 1;
+    			prevMinus = true;
     		} else if ( answer%3 == 0 ) {
     			answer = answer/3;
+    			prevMinus = false;
     		} else if ( answer%3 != 0 && answer%2 == 0 ) {
-    			if ( (answer-1)%3 == 0 ) {
+    			if ( (answer-1)%3 == 0 && !prevMinus) {
     				answer = answer - 1;
+    				prevMinus = true;
     			} else {
     				answer = answer/2;
+    				prevMinus = false;
     			}
     		}
     		
-    		getMinCount(answer, cnt);
+    		getMinCount(answer, cnt, prevMinus);
     	}
     }
 }	
