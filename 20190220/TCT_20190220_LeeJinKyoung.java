@@ -52,7 +52,7 @@ public class TCT_20190220_LeeJinKyoung {
                 } else {
                     if(preResult < result ) {
                         preResult = result;
-                }   
+                    }   
                     result = 0;
                 }
             }
