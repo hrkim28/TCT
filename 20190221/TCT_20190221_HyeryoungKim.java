@@ -13,23 +13,16 @@ public class TCT_20190221_HyeryoungKim {
     	int onePass = 0;
     	int twoPass = 0;
     	for ( int idx = 0 ; idx < subway.length ; idx++ ) {
-    		onePass = 0;
-    		for ( int jdx = 0 ; jdx < idx ; jdx++ ) {
-    			onePass += subway[jdx][1];
-    			if ( jdx != 0 ) {
-    				onePass -= subway[jdx][0];
-    			}
+    		onePass += subway[idx][1];
+    		if ( idx != 0 ) {
+    			onePass -= subway[idx][0];
     		}
     		
-    		twoPass = 0;
-    		for ( int jdx = 0 ; jdx < idx ; jdx++ ) {
-    			twoPass += subway[jdx][3];
-    			if ( jdx != 0 ) {
-    				twoPass -= subway[jdx][2];
-    			}
+    		twoPass += subway[idx][3];
+    		if ( idx != 0 ) {
+    			twoPass -= subway[idx][2];
     		}
     		
-    		tmp = 0;
     		tmp = onePass*1000 + twoPass*200;
     		if ( max < tmp ) {
     			max = tmp;
