@@ -27,30 +27,25 @@ public class TCT_20190221_ahryunPark {
 	
 	public int getReuslt(int[][] inputList){
 		
-		int sumMax = 0;
 		
+		int singleAccount = (inputList[0][1]-inputList[0][0])*1000;
+		int transferAccount = (inputList[0][3]-inputList[0][2])*200;
+		int sumMax = singleAccount + transferAccount;
 		
-		for(int inx= 0; inx<inputList.length; inx++) {
-			int singleAccount = 0;
-			int transferAccount = 0;
-			for(int jnx = 0; jnx < inx+1; jnx++) {
+		for(int inx= 1; inx<inputList.length; inx++) {
 				
-				singleAccount = singleAccount + (inputList[jnx][1]-inputList[jnx][0])*1000;
-				transferAccount = transferAccount + (inputList[jnx][3]-inputList[jnx][2])*200;
-			}
+			singleAccount = singleAccount + (inputList[inx][1]-inputList[inx][0])*1000;
+			transferAccount = transferAccount + (inputList[inx][3]-inputList[inx][2])*200;
 			
 			if(sumMax < singleAccount+transferAccount) {
 				sumMax = singleAccount+transferAccount;
 			}
-		
 		}
-		
-		
-		
 
 		return sumMax;
 	}
+		
+		
 	
-
 	
 }
