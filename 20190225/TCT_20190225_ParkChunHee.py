@@ -19,8 +19,6 @@ def findMaxVal(inputArr):
             inputArr[maxIndex+1] = 0
             inputArr[maxIndex-1] = 0
 
-    return maxMoney
-
 #inputArr = [2000, 3000]
 inputArr = [1000, 10000, 8000, 5000, 7000, 3000, 9000]
 
