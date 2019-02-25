@@ -43,7 +43,7 @@ public class TCT_20190225_JaeseokLim {
 	}
 	
 	private static int fnFind(int strPos,int[] test,int tempMoney,boolean isFirst) {
-		if ( (!isFirst && strPos > test.length-1) || (isFirst && strPos >= test.length-1)) {
+		if ( (!isFirst && strPos > test.length-1) || (isFirst && strPos >= test.length-2)) {
 			return tempMoney;
 		} else {
 			tempMoney += test[strPos];
