@@ -77,7 +77,7 @@ public class TCT_20190225_ahryunPark {
 				if(resultList.size() > 3) {
 					if(maxIndex == 0 ) {
 						resultList.remove(maxIndex);
-						resultList.remove(maxIndex+1);
+						resultList.remove(maxIndex);
 						resultList.remove(resultList.size()-1);
 					}else if(maxIndex == resultList.size()-1) {
 						resultList.remove(maxIndex);
