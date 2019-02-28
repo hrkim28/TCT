@@ -31,25 +31,5 @@ public class TCT_20190228_LeeJinKyoung {
 		
 		System.out.println(riskValue);
 		
-	}
-	
-	public static int[] getList (int n, int r, int input) {
-		if(n == 0) {
-			return new int[]{-1};
-		} else {
-			int[] result = new int[input];
-			
-			for(int inx = 0 ; inx < input ; inx++) {
-				if(r <= inx) {
-					result[inx] = n + 1;
-				} else {
-					result[inx] = n;
-				}
-			}
-			
-			return result;
-			
-		}
-	}
-	
+	}	
 }
