@@ -6,35 +6,15 @@ public class TCT_20190304_HyeryoungKim {
     
     public static void main(String[] args) {
         TCT_20190304_HyeryoungKim tct = new TCT_20190304_HyeryoungKim();
-        String input1 = "madam";
-        System.out.println(tct.getAdditionalAlphabetForPalindrome(input1) + " (=" + list.toString() + ")");
-        
-        String input2 = "lalavla";
-        System.out.println(tct.getAdditionalAlphabetForPalindrome(input2) + " (=" + list.toString() + ")");
-        
-        String input3 = "nurses run";
-        System.out.println(tct.getAdditionalAlphabetForPalindrome(input3) + " (=" + list.toString() + ")");
-        
-        String input4 = "level";
-        System.out.println(tct.getAdditionalAlphabetForPalindrome(input4) + " (=" + list.toString() + ")");
-        
-        String input5 = "abab";
-        System.out.println(tct.getAdditionalAlphabetForPalindrome(input5) + " (=" + list.toString() + ")");
-        
-        String input6 = "rotat";
-        System.out.println(tct.getAdditionalAlphabetForPalindrome(input6) + " (=" + list.toString() + ")");
+        String[] strArr = {"madam", "lalavla", "nurses run", "level", "abab", "rotat"};
+        for ( String input : strArr ) {
+        	System.out.println(tct.getAdditionalAlphabetForPalindrome(input) + " (=" + list.toString() + ")");
+        }
     }
     
     private int getAdditionalAlphabetForPalindrome(String input) {
         list.clear();
         String str = input.replaceAll("\\p{Z}", "");
-        
-        List<String> originList = new ArrayList<String>();
-        for ( int idx = 0 ; idx < str.length() ; idx++ ) {
-            if ( !originList.contains(str.substring(idx, idx+1)) ) {
-                originList.add(str.substring(idx, idx+1));
-            }
-        }
         
         if ( !isPalindrome(str) ) {
             makePalindrome(str, str, 0);
