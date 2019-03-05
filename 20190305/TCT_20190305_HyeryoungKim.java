@@ -21,7 +21,7 @@ public class TCT_20190305_HyeryoungKim {
         int base10 = 0;
         int sum = 0;
         List<Integer> result = new ArrayList<Integer>();
-        for ( int idx = 2 ; idx <= 9 ; idx++ ) {
+        for ( int idx = 2 ; idx <= base ; idx++ ) {
             base10 = getBiggerNumber(base, idx);
             sum = getSumByConvertion(base, base10);
             if ( sum%idx == 0 ) {
@@ -30,17 +30,20 @@ public class TCT_20190305_HyeryoungKim {
             }
         }
         
-        int cnt = 2;
-        while ( true ) {
-            if ( Math.pow(result.get(0), cnt) < base ) {
-                result.add((int)Math.pow(result.get(0), cnt));
-                cnt++;
-            } else {
-                break;
+        if ( !result.isEmpty() ) {
+        	int cnt = 2;
+            while ( true ) {
+                if ( Math.pow(result.get(0), cnt) < base ) {
+                    result.add((int)Math.pow(result.get(0), cnt));
+                    cnt++;
+                } else {
+                    break;
+                }
             }
+            
+            System.out.println(result.toString());
         }
         
-        System.out.println(result.toString());
     }
 
     private int getBiggerNumber(int base, int n) {
