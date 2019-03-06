@@ -9,7 +9,7 @@ public class TCT_20190306_LeeJinKyoung {
         String input = "jobLog";
         String result = "";
         
-        if(!input.equals(input.toUpperCase()) && input.indexOf('_') > 0 ){
+        if(!input.equals(input.toLowerCase()) && input.indexOf('_') > 0 ){
             result = "Error!!!";
         } else if(input.indexOf('_') > 0) {
             for(int inx = 0; inx < input.length(); inx++){
