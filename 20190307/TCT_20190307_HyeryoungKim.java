@@ -9,7 +9,7 @@ public class TCT_20190307_HyeryoungKim {
     public static void main(String[] args) {
         TCT_20190307_HyeryoungKim tct = new TCT_20190307_HyeryoungKim();
         int tree = 4;
-        int need = 7;
+        int need = 8;
         int[] treeHeight = {20,15,10,17};
         System.out.println(tct.getMaxHeightForMinTree(tree, need, treeHeight));
     }
@@ -23,17 +23,14 @@ public class TCT_20190307_HyeryoungKim {
         if ( need > diff ) {
             int startHeight = treeHeight[tree-2];
             treeHeight[tree-1] = startHeight;
-            while ( true ) {
+            while ( sum < need ) {
                 sum = diff;
+                startHeight--;
                 for ( int idx = 0 ; idx < treeHeight.length ; idx++ ) {
                     if ( treeHeight[idx] > startHeight ) {
                         sum += treeHeight[idx] - startHeight;
                     }
                 }
-                if ( sum == need ) {
-                    break;
-                }
-                startHeight--;
             }
             result = startHeight;
         } else {
