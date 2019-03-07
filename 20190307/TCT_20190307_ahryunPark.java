@@ -46,11 +46,7 @@ public class TCT_20190307_ahryunPark {
 		int height1 = 7;
 		int[] treeList1 = {20,15,10,17};
 		
-		
-		int height2 = 100;
-		int[] treeList2 = {20,17,10,17};
 		System.out.println(tct.getReuslt(height1, treeList1));
-		System.out.println(tct.getReuslt(height2, treeList2));
 		
 	}
 
@@ -83,11 +79,9 @@ public class TCT_20190307_ahryunPark {
 			
 		}
 		
-		if(maxCnt < minCnt) {
-			result = Math.abs(maxCnt) + minCnt + tempList.get(0);
-
-		}else {
+		if(maxCnt >= minCnt) {
 			result = maxCnt;
+
 		}
 		
 		return result;
