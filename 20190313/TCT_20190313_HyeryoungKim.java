@@ -35,7 +35,7 @@ public class TCT_20190313_HyeryoungKim {
         if ( maxMakgeolli > min ) {
             maxMakgeolli = min;
         }
-        if ( ju >= 2 && friend >= 2 && maxMakgeolli > (int)friend/ju ) {
+        if ( ju >= 2 && friend >= 2 && maxMakgeolli > (int)min/((int)friend/ju) ) {
             maxMakgeolli = (int)min/((int)friend/ju);
         }
         
