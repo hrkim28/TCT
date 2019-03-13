@@ -15,7 +15,7 @@ public class TCT_20190313_LeeJinKyoung {
         
         int avg = inputSum/K;
         int remain = 0;
-        int copyK = 3;
+        int copyK = 0;
         
         for(int inx = avg ; inx > 0; inx--){
             copyK = K;
