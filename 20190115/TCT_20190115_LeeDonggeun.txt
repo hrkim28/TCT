@@ -1,0 +1,30 @@
+/* 소스이해 차원에서 타작성자 소스 인용하여 작성함 */
+
+import java.util.Scanner;
+
+public class TCT_20190115 {
+	public static void main(String[] args) {
+
+
+		Scanner sc = new Scanner(System.in) ; 	
+		int max = sc.nextInt() ;
+		int cnt1 = 0 ;
+		int cnt2 = 1 ;
+		int nxt_cnt ;
+		
+                System.out.print(cnt1 + ", " + cnt2) ;
+
+		for(int i = 1 ; i <= max ; i++ ) {  
+    		    
+			nxt_cnt = cnt1 + cnt2 ; 
+			
+                        System.out.print(", " + nxt_cnt) ;
+			
+                        cnt1 = cnt2;
+			cnt2 = nxt_cnt;
+
+		}
+
+		sc.close();
+	}
+}

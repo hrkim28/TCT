@@ -1,0 +1,102 @@
+------------------------------------------------------------------------------------------------------------
+-- 아직 Python을 셋업하고 학습해서 문제풀이에 동참해야 하는데 시간이 걸리네요.빨릭 적응하도록 하겠습니다.^^
+-- 문제에 대한 코딩 풀이 사례를 참조로 올립니다. 베스트플렉티스는 아니니 참조만 하세요.
+------------------------------------------------------------------------------------------------------------
+
+[ Python ]
+- 사례1)
+import re
+
+
+def cal(s):
+    s = print_step("\*|/", s)
+    s = print_step("\+|-", s)
+
+
+def print_step(p, s):
+    while re.findall(p, s[1:] if s[0] == "-" else s):
+        pattern = "[-+]?\d+[.]?\d*[" + p + "][-+]?\d+[.]?\d*"
+        found = re.findall(pattern, s)[0]
+        val = str(eval(found))
+        val = val if val[0] == "-" else "+" + val
+        s = s.replace(found, val)
+        s = s[1:] if s[0] == "+" else s
+        print(s)
+    return s
+
+s = "5+6*3-6/2+5"
+cal(s)
+
+
+- 사례2)
+def i(e,f):
+     return e.index(f) if f in e else len(e)+1
+
+def cal1(e):
+     print(e)
+     e = list(e)
+     for x in range(e.count('-')+e.count('+')+e.count('*')+e.count('/')):
+          if e.count('-')+e.count('+')+e.count('*')+e.count('/') == 1:
+                    print(eval(''.join(e)))
+                    exit()
+          ix = min(i(e,'*'),i(e,'/')) if '*' in e or '/' in e else min(i(e,'+'),i(e,'-'))
+          c1,c2 = ix-1,ix+1
+          while True:
+               if e[c2] in '+-*/' and e[c1] in '+-*/':
+                    break
+               else:
+                    c1 -= 0 if e[c1] in '+-*/' else 1
+                    c2 += 0 if e[c2] in '+-*/' else 1
+          if c1 < -1:
+               c1 = -1
+          e[c2-1] = str(eval(''.join(e[c1+1:c2])))
+          del e[c1+1:c2-1]
+          print(''.join(e))
+
+#공백이 있을 때
+def cal2(e):
+     print(e)
+     e = e.split()
+     for x in range(e.count('-')+e.count('+')+e.count('*')+e.count('/')):
+          ix = min(i(e,'*'),i(e,'/')) if '*' in e or '/' in e else min(i(e,'+'),i(e,'-'))
+          e[ix+1] = str(eval(''.join(e[ix-1:ix+2])))
+          del e[ix-1:ix+1]
+          print(''.join(e))
+
+
+[ Java ]
+- 사례
+public static void main(String[] args) {
+        String input = "5*1217+4*7+3*123+8*3*4*5*6*7*2/2+3";
+        String[] math = (input.replaceAll("\\+", " +").replaceAll("-", " -").replaceAll("\\*", " *").replaceAll("/",
+                " /")).split(" ");
+        for (int i = math[0].equals("") ? 2 : 1; i < math.length; i++) {
+            if (math[i].matches("[*/].*")) {
+                int temp = Check(math, i - 1);
+                int a = Integer.valueOf(math[temp]);
+                int b = Integer.valueOf(math[i].substring(1));
+                math[temp] = (math[i].startsWith("*") ? a * b : a / b) + "";
+                math[i] = "";
+                print(math);
+            }
+        }
+        for (int i = 2; i < math.length; i++)
+            if (!math[i].equals("")) {
+                int temp = math[0].equals("") ? 1 : 0;
+                math[temp] = (Integer.valueOf(math[temp]) + Integer.valueOf(math[i])) + "";
+                math[i] = "";
+                print(math);
+            }
+    }
+
+    private static void print(String[] math) {
+        for (int i = 0; i < math.length; i++)
+            System.out.print(math[i].matches("[0-9]+")
+                    ? math[0].equals("") ? i == 1 ? math[i] : "+" + math[i] : i == 0 ? math[i] : "+" + math[i]
+                    : math[i]);
+        System.out.println();
+    }
+
+    private static int Check(String math[], int i) {
+        return math[i].equals("") ? Check(math, i - 1) : i;
+    }
