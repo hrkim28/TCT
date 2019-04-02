@@ -36,7 +36,7 @@ public class TCT_20190402_HyeryoungKim {
         
         for ( String success : completion ) {
             if ( completionMap.containsKey(success) ) {
-                participantMap.put(success, completionMap.get(success) + 1);
+                completionMap.put(success, completionMap.get(success) + 1);
             } else {
                 completionMap.put(success, 1);
             }
