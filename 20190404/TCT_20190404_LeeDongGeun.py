@@ -4,7 +4,7 @@ def repeatChar(inputCount, inputData):
 
     repeatVal = ''
 
-    resultVal = ''.join([repeatVal + c for c in inputData for i in range(inputCount)])
+    resultVal = ''.join([c * inputCount for c in inputData])
    
     return resultVal
 
