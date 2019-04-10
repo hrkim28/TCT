@@ -1,5 +1,5 @@
 # Create by LeeDongGeun
-# 문제풀이 진행중입니다.(미완성)
+# 문제풀이 수정완료
 
 def compPrime(inputData):
     intCheck = 0
