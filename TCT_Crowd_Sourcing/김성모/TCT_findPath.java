@@ -30,12 +30,6 @@ public class TCT_findPath {
 //        inputMap.get("D").add(new Point(2,3));  inputMap.get("D").add(new Point(4,4));
 //        inputMap.get("E").add(new Point(3,5));  inputMap.get("E").add(new Point(5,4));
         
-        // Feasible Alternative
-        feasibleMap.put("A", new ArrayList<ArrayList<Point>>());
-        feasibleMap.put("B", new ArrayList<ArrayList<Point>>());
-        feasibleMap.put("C", new ArrayList<ArrayList<Point>>());
-        feasibleMap.put("D", new ArrayList<ArrayList<Point>>());
-        feasibleMap.put("E", new ArrayList<ArrayList<Point>>());
     }
     
     public static void main(String[] args) {
@@ -65,6 +59,9 @@ public class TCT_findPath {
         ArrayList<Point> initList;
         // key, pathList, currentPoint, endPoint
         for( String key : inputMap.keySet() ){
+         // Feasible Alternative
+            feasibleMap.put(key, new ArrayList<ArrayList<Point>>());
+            
             initList = new ArrayList<Point>();
             initList.add(inputMap.get(key).get(0));
             findPath( key, initList, inputMap.get(key).get(0), inputMap.get(key).get(1) ); //재귀
