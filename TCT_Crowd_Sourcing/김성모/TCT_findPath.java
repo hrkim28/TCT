@@ -15,11 +15,20 @@ public class TCT_findPath {
         inputMap.put("C", new ArrayList<Point>());
         inputMap.put("D", new ArrayList<Point>());
         inputMap.put("E", new ArrayList<Point>());
+        
+        // Test Case 1
         inputMap.get("A").add(new Point(1,2));  inputMap.get("A").add(new Point(4,1));
         inputMap.get("B").add(new Point(1,3));  inputMap.get("B").add(new Point(5,1));
         inputMap.get("C").add(new Point(1,4));  inputMap.get("C").add(new Point(5,4));
         inputMap.get("D").add(new Point(2,4));  inputMap.get("D").add(new Point(3,3));
         inputMap.get("E").add(new Point(4,4));  inputMap.get("E").add(new Point(5,3));
+        
+        // Test Case 2
+//        inputMap.get("A").add(new Point(4,1));  inputMap.get("A").add(new Point(2,5));
+//        inputMap.get("B").add(new Point(5,1));  inputMap.get("B").add(new Point(4,2));
+//        inputMap.get("C").add(new Point(2,2));  inputMap.get("C").add(new Point(5,3));
+//        inputMap.get("D").add(new Point(2,3));  inputMap.get("D").add(new Point(4,4));
+//        inputMap.get("E").add(new Point(3,5));  inputMap.get("E").add(new Point(5,4));
         
         // Feasible Alternative
         feasibleMap.put("A", new ArrayList<ArrayList<Point>>());
