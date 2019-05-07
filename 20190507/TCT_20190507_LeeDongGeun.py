@@ -1,4 +1,5 @@
 # Create By LeeDongGeun
+# 코딩을 너무 원시적으로 했네요.ㅠㅠ 좀더 깔끔하게 하고 싶은데..일단 여기까지 하고 올릴께요.  
 
 def codeMonster(input_cnt, input_data):
     # 가정 횟수에 대한 범위 정의 및 가정 횟수와 가정등수의 건수는 같아야 함
