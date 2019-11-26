@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 class Parity {
+	
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -22,7 +23,6 @@ class Parity {
             String arrayRow = sc.nextLine();
             String[] rowElement = arrayRow.split("\\s");
             for (int j = 0; j < rowElement.length; j++) {
-                // System.out.println(rowElement[j]);
                 parityCheck[i][j] = Integer.parseInt(rowElement[j]);
             }
         }
@@ -74,10 +74,11 @@ class Parity {
     }
 
     /**
-     * 행과열 parity 검사에서 fail한 횟수에 따라 분기하는 Method 1. 행과열 parity 검사 fail횟수가 0인 경우 "OK"
-     * 출력 2. 행과열 parity 검사 fail횟수가 각각 1인 경우 해당 행과 열 index를 출력 3. 그 이외의 경우는 "Corrupt"
-     * 출력 cf) 행 혹은 열 parity 검사 fail횟수가 1인 경우에도 해당 숫자 변경시 다른 parity검사의 결과값이 바뀌기 때문에
-     * 실패
+     * 행과열 parity 검사에서 fail한 횟수에 따라 분기하는 Method 
+     * 1. 행과열 parity 검사 fail횟수가 0인 경우 "OK"출력 
+     * 2. 행과열 parity 검사 fail횟수가 각각 1인 경우 해당 행과 열 index를 출력 
+     * 3. 그 이외의 경우는 "Corrupt"출력
+     *    cf) 행 혹은 열 parity 검사 fail횟수가 1인 경우에도 해당 숫자 변경시 다른 parity검사의 결과값이 바뀌기 때문에 실패
      * 
      * @param rowCnt 행 parity 검사에서 fail한 횟수
      * @param colCnt 열 parity 검사에서 fail한 횟수
