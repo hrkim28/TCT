@@ -1,0 +1,13 @@
+.HeaderBackGround {
+    background: black;
+    padding: 1rem;
+  }
+
+.ControlButton {
+  float:right;
+  padding: 2rem;
+}
+
+.FlowChartSegment {
+  padding: 5rem;
+}
