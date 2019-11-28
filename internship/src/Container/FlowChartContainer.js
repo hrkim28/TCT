@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onProgress: () => dispatch(actions.ProgressAsync()),
+    onProgress: () => dispatch(actions.progressAsync()),
+    onIncrement: () => dispatch(actions.incrementAsync()),
     onRestart: () => dispatch(actions.restart())
 });
 

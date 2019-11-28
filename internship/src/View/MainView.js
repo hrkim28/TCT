@@ -10,10 +10,11 @@ class MainView extends Component {
                 <HeaderView />
                 <ControlView
                     onProgress={this.props.onProgress}
-                    onRestart={this.props.onRestart}
-                    process={this.props.process} />
+                    onIncrement={this.props.onIncrement}
+                    onRestart={this.props.onRestart} />
                 <FlowChartView
-                    process={this.props.process} />
+                    process={this.props.process}
+                    percent={this.props.percent} />
             </Fragment>
         );
     }

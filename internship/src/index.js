@@ -13,8 +13,11 @@ import { Provider } from 'react-redux';
 //미들웨어
 import thunk from 'redux-thunk';
 
+//Redux 개발툴 설정
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ;
+
 // Store 생성
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
     <Provider store={store}>

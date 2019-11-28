@@ -3,3 +3,4 @@
  */
 export const PROGRESS = 'PROGRESS';
 export const RESTART = 'RESTART';
+export const INCREMENT = 'INCREMENT';

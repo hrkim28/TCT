@@ -7,7 +7,10 @@ class ControlView extends Component {
             <div className="ControlButton">
                 <Grid>
                     <Button content='Start' primary
-                        onClick={(e) => this.props.onProgress()} />
+                        onClick={(e) => {
+                            this.props.onProgress();
+                            this.props.onIncrement();
+                        }} />
                     <Button secondary onClick={(e)=>this.props.onRestart()}>
                         <Icon fitted name='undo' />
                     </Button>

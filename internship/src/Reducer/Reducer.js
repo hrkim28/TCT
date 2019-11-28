@@ -14,8 +14,16 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 process: state.process + 1
             };
+
+        case types.INCREMENT:
+            return {
+                ...state,
+                percent: state.percent + 5
+            };
+
         case types.RESTART:
             return initialState;
+
         default:
             return state;
     }
