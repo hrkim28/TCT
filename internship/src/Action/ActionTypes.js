@@ -1,6 +1,13 @@
-/**
- * Action 종류 선언
- */
-export const PROGRESS = 'PROGRESS';
+export const STEEL_GRD = 'STEEL_GRD';
+export const QUALITY_TEST = 'QUALITY_TEST';
+export const REFINE_RES = 'REFINE_RES';
+export const STEEL_MAKING = 'STEEL_MAKING';
+export const CASTING_CUT = 'CASTING_CUT';
+export const CUTTING_1ST = 'CUTTING_1ST';
+export const CUTTING_2ND = 'CUTTING_2ND';
+export const CORRECTION = 'CORRECTION';
+export const CHARGING = 'CHARGING';
+export const SCRAP = 'SCRAP';
+export const PERCENT = 'PERCENT';
+export const IS_SUCCESS = 'IS_SUCCESS';
 export const RESTART = 'RESTART';
-export const INCREMENT = 'INCREMENT';

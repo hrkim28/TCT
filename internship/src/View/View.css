@@ -4,10 +4,61 @@
   }
 
 .ControlButton {
-  float:right;
-  padding: 2rem;
+  padding: 1rem;
+  height: 50px;
 }
 
 .FlowChartSegment {
-  padding: 5rem;
+  padding: 10rem 2rem 10rem 2rem;
+}
+
+.SegmentInline {
+  min-height: 500px
+}
+
+.SteelMaking {
+  position: absolute;
+  left: 50px;
+  top: 200px;
+}
+
+.CastingCut {
+  position: absolute;
+  left: 350px;
+  top: 200px;
+}
+
+.Cutting1st {
+  position: absolute;
+  left: 650px;
+  top: 200px;
+}
+
+.Cutting2nd {
+  position: absolute;
+  left: 950px;
+  top: 200px;
+}
+
+.Correction {
+  position: absolute;
+  left: 1250px;
+  top: 200px;
+}
+
+.Charging {
+  position: absolute;
+  left: 1600px;
+  top: 100px;
+}
+
+.Scrap {
+  position: absolute;
+  left: 1600px;
+  top: 300px;
+}
+
+.Progress {
+  position: absolute;
+  top: 450px;
 }

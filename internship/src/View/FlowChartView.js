@@ -1,82 +1,45 @@
 import React, { Component } from 'react';
-import { Segment } from 'semantic-ui-react';
-import { Step, Progress } from 'semantic-ui-react'
+import { Segment, Progress } from 'semantic-ui-react'
+import SteelMakingView from './FlowChart/SteelMakingView';
+import CastingCutView from './FlowChart/CastingCutView';
+import Cutting1stView from './FlowChart/Cutting1stView';
+import Cutting2ndView from './FlowChart/Cutting2ndView';
+import CorrectionView from './FlowChart/CorrectionView';
+import ChargingView from './FlowChart/ChargingView';
+import ScrapView from './FlowChart/ScrapView';
+import './View.css';
 
 class FlowChartView extends Component {
 
     render() {
-        const process = this.props.process;
         return (
             <div className="FlowChartSegment">
                 <Segment>
-                    <Segment.Inline>
-                    <Step.Group ordered>
+                    <Segment.Inline className="SegmentInline">
+                        <div className="SteelMaking">
+                            <SteelMakingView steelMaking={this.props.steelMaking} />
+                        </div>
+                        <CastingCutView castingCut={this.props.castingCut} />
+                        <Cutting1stView cutting1st={this.props.cutting1st} />
+                        <Cutting2ndView cutting2nd={this.props.cutting2nd} />
+                        <CorrectionView correction={this.props.correction} />
+                        <ChargingView charging={this.props.charging} />
+                        <ScrapView scrap={this.props.scrap} />
                         {
-                            process >= 1 ?
-                                <Step completed>
-                                    <Step.Content>
-                                        <Step.Title>Shipping</Step.Title>
-                                        <Step.Description>Choose your shipping options</Step.Description>
-                                    </Step.Content>
-                                </Step>
+                            this.props.result.isSuccess === true ?
+                                <Progress className="Progress" percent={this.props.result.percent} indicating progress='percent'>
+                                    {this.props.result.percent === 100 ? "정상처리 되었습니다." : ""}
+                                </Progress>
                                 :
-                                <Step active>
-                                    <Step.Content>
-                                        <Step.Title>Shipping</Step.Title>
-                                        <Step.Description>Choose your shipping options</Step.Description>
-                                    </Step.Content>
-                                </Step>}
-                        {
-                            process >= 2 ?
-                                <Step completed>
-                                    <Step.Content>
-                                        <Step.Title>Billing</Step.Title>
-                                        <Step.Description>Enter billing information</Step.Description>
-                                    </Step.Content>
-                                </Step>
-                                :
-                                <Step active>
-                                    <Step.Content>
-                                        <Step.Title>Billing</Step.Title>
-                                        <Step.Description>Enter billing information</Step.Description>
-                                    </Step.Content>
-                                </Step>
+                                <Progress className="Progress" percent={this.props.result.percent} indicating error progress='percent'>
+                                    {this.props.result.percent === 100 ? "품질불량으로 Scrap처리 되었습니다." : ""}
+                                </Progress>
                         }
-                        {
-                            process >= 3 ?
-                                <Step completed>
-                                    <Step.Content>
-                                        <Step.Title>Confirm Order</Step.Title>
-                                    </Step.Content>
-                                </Step>
-                                :
-                                <Step active>
-                                    <Step.Content>
-                                        <Step.Title>Confirm Order</Step.Title>
-                                    </Step.Content>
-                                </Step>
-                        }
-                        {
-                            process >= 4 ?
-                                <Step completed>
-                                    <Step.Content>
-                                        <Step.Title>Success</Step.Title>
-                                    </Step.Content>
-                                </Step>
-                                :
-                                <Step active>
-                                    <Step.Content>
-                                        <Step.Title>Success</Step.Title>
-                                    </Step.Content>
-                                </Step>
-                        }
-                    </Step.Group>
-                    <Progress percent={this.props.percent} indicating/>
                     </Segment.Inline>
                 </Segment>
             </div>
-                );
-            }
-        }
-        
-        export default FlowChartView;
+        );
+    }
+}
+
+export default FlowChartView;

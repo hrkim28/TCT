@@ -9,12 +9,23 @@ class MainView extends Component {
             <Fragment>
                 <HeaderView />
                 <ControlView
+                    searchParam={this.props.searchParam}
+                    onChangeSteelGrd={this.props.onChangeSteelGrd}
+                    onChangeQualityTest={this.props.onChangeQualityTest}
+                    onChangeRefine={this.props.onChangeRefine}
                     onProgress={this.props.onProgress}
                     onIncrement={this.props.onIncrement}
                     onRestart={this.props.onRestart} />
                 <FlowChartView
-                    process={this.props.process}
-                    percent={this.props.percent} />
+                    steelMaking={this.props.steelMaking}
+                    castingCut={this.props.castingCut}
+                    cutting1st={this.props.cutting1st}
+                    cutting2nd={this.props.cutting2nd}
+                    scrap={this.props.scrap}
+                    correction={this.props.correction}
+                    charging={this.props.charging}
+                    result={this.props.result}
+                     />
             </Fragment>
         );
     }
