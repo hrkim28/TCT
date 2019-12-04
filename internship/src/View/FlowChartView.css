@@ -1,0 +1,7 @@
+.FlowChartSegment {
+    padding: 6rem 2rem 10rem 2rem;
+  }
+
+.SegmentInline {
+    min-height: 500px
+  }

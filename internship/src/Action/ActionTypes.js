@@ -9,5 +9,6 @@ export const CORRECTION = 'CORRECTION';
 export const CHARGING = 'CHARGING';
 export const SCRAP = 'SCRAP';
 export const PERCENT = 'PERCENT';
+export const NODE = 'NODE';
 export const IS_SUCCESS = 'IS_SUCCESS';
 export const RESTART = 'RESTART';

@@ -54,6 +54,11 @@ export const isSuccess = (value) => ({
     payload: value
 })
 
+export const onChangeNode = (value) => ({
+    type: types.NODE,
+    payload: value
+})
+
 export const restart = () => ({
     type: types.RESTART
 });
@@ -66,17 +71,17 @@ export const progressAsync = (searchParam) => dispatch => {
 
     let time = 2000;
 
-    time = progressSteelMaking(dispatch,time);
+    time = progressSteelMaking(dispatch, time);
 
-    time =progressRefineResTest(searchParam,dispatch,time);
-    
-    time =progressCastingCut(dispatch,time);
+    time = progressRefineResTest(searchParam, dispatch, time);
 
-    time =progress2ndCutting(searchParam,dispatch,time);
+    time = progressCastingCut(dispatch, time);
 
-    time =progressCorrection(dispatch,time);
-    
-    progressIsSuccess(searchParam,dispatch,time);
+    time = progress2ndCutting(searchParam, dispatch, time);
+
+    time = progressCorrection(dispatch, time);
+
+    progressIsSuccess(searchParam, dispatch, time);
 }
 
 /**
@@ -84,9 +89,10 @@ export const progressAsync = (searchParam) => dispatch => {
  * @param {*} dispatch 
  * @param {*} time 
  */
-function progressSteelMaking(dispatch,time) {
+function progressSteelMaking(dispatch, time) {
     setTimeout(() => { dispatch(steelMaking()) }, time);
     setTimeout(() => { dispatch(onChangePercent(10)) }, time);
+    setTimeout(() => { dispatch(onChangeNode([true,false,false,false,false,false,false,false])) }, time);
     return time;
 }
 
@@ -96,16 +102,18 @@ function progressSteelMaking(dispatch,time) {
  * @param {*} dispatch 
  * @param {*} time 
  */
-function progressRefineResTest(searchParam,dispatch,time) {
+function progressRefineResTest(searchParam, dispatch, time) {
     if (searchParam.refinedRes < 3) {
         time += 1000;
         setTimeout(() => { alert("부적합판정") }, time);
+        setTimeout(() => { dispatch(onChangeNode([false,true,false,false,false,false,false,false])) }, time);
         time += 5000;
         setTimeout(() => { dispatch(steelMaking()) }, time);
         setTimeout(() => { dispatch(onChangePercent(0)) }, time);
         time += 2000;
         setTimeout(() => { dispatch(steelMaking()) }, time);
         setTimeout(() => { dispatch(onChangePercent(10)) }, time);
+        setTimeout(() => { dispatch(onChangeNode([true,false,false,false,false,false,false,false])) }, time);
     }
     return time;
 }
@@ -115,13 +123,15 @@ function progressRefineResTest(searchParam,dispatch,time) {
  * @param {*} dispatch 
  * @param {*} time 
  */
-function progressCastingCut(dispatch,time) {
+function progressCastingCut(dispatch, time) {
     time += 2000;
     setTimeout(() => { dispatch(castingCut()) }, time);
     setTimeout(() => { dispatch(onChangePercent(45)) }, time);
+    setTimeout(() => { dispatch(onChangeNode([false,false,true,false,false,false,false,false])) }, time);
     time += 2000;
     setTimeout(() => { dispatch(cutting1st()) }, time);
     setTimeout(() => { dispatch(onChangePercent(55)) }, time);
+   
     return time;
 }
 
@@ -130,12 +140,14 @@ function progressCastingCut(dispatch,time) {
  * @param {*} dispatch 
  * @param {*} time 
  */
-function progress2ndCutting(searchParam,dispatch,time) {
+function progress2ndCutting(searchParam, dispatch, time) {
     if (searchParam.steelGrd === 'T') {
+        setTimeout(() => { dispatch(onChangeNode([false,false,false,true,false,false,false,false])) }, time);
         time += 2000;
         setTimeout(() => { dispatch(cutting2nd()) }, time);
         setTimeout(() => { dispatch(onChangePercent(65)) }, time);
-    }
+        setTimeout(() => { dispatch(onChangeNode([false,false,false,false,false,true,false,false])) }, time);
+    } else  setTimeout(() => { dispatch(onChangeNode([false,false,false,false,true,false,false,false])) }, time);
     return time;
 }
 
@@ -144,7 +156,7 @@ function progress2ndCutting(searchParam,dispatch,time) {
  * @param {*} dispatch 
  * @param {*} time 
  */
-function progressCorrection(dispatch,time) {
+function progressCorrection(dispatch, time) {
     time += 2000;
     setTimeout(() => { dispatch(correction()) }, time);
     setTimeout(() => { dispatch(onChangePercent(80)) }, time);
@@ -157,12 +169,14 @@ function progressCorrection(dispatch,time) {
  * @param {*} dispatch 
  * @param {*} time 
  */
-function progressIsSuccess(searchParam,dispatch,time) {
+function progressIsSuccess(searchParam, dispatch, time) {
     if (searchParam.qualityRes === true) {
+        setTimeout(() => { dispatch(onChangeNode([false,false,false,false,false,false,true,false])) }, time);
         time += 2000;
         setTimeout(() => { dispatch(charging()) }, time);
         setTimeout(() => { dispatch(isSuccess(true)) }, time);
     } else {
+        setTimeout(() => { dispatch(onChangeNode([false,false,false,false,false,false,false,true])) }, time);
         time += 2000;
         setTimeout(() => { dispatch(scrap()) }, time);
         setTimeout(() => { dispatch(isSuccess(false)) }, time);

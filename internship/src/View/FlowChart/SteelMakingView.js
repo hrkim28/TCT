@@ -5,7 +5,7 @@ import '../View.css';
 class SteelMakingView extends Component {
     render() {
         return (
-            <div>
+            <div className="SteelMaking">
                 <Step.Group>
                     {
                         this.props.steelMaking.result === true ?

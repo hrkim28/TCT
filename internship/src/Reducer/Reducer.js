@@ -39,6 +39,7 @@ const initialState = {
         result: false,
     },
     result: {
+        node: Array.apply(null, new Array(8)).map(Boolean.prototype.valueOf, false),
         percent: 0,
         isSuccess: true
     }
@@ -129,6 +130,16 @@ export default function reducer(state = initialState, action) {
                     result: !state.charging.result
                 }
             }
+
+        case types.NODE:
+            return {
+                ...state,
+                result: {
+                    ...state.result,
+                    node: action.payload
+                }
+            }
+
         case types.PERCENT:
             return {
                 ...state,

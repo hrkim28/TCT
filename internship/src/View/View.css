@@ -3,19 +3,6 @@
     padding: 1rem;
   }
 
-.ControlButton {
-  padding: 1rem;
-  height: 50px;
-}
-
-.FlowChartSegment {
-  padding: 10rem 2rem 10rem 2rem;
-}
-
-.SegmentInline {
-  min-height: 500px
-}
-
 .SteelMaking {
   position: absolute;
   left: 50px;
@@ -56,9 +43,4 @@
   position: absolute;
   left: 1600px;
   top: 300px;
-}
-
-.Progress {
-  position: absolute;
-  top: 450px;
 }

@@ -1,24 +1,40 @@
 import React, { Component } from 'react';
 import { Segment, Progress } from 'semantic-ui-react'
-import SteelMakingView from './FlowChart/SteelMakingView';
-import CastingCutView from './FlowChart/CastingCutView';
-import Cutting1stView from './FlowChart/Cutting1stView';
-import Cutting2ndView from './FlowChart/Cutting2ndView';
-import CorrectionView from './FlowChart/CorrectionView';
-import ChargingView from './FlowChart/ChargingView';
-import ScrapView from './FlowChart/ScrapView';
-import './View.css';
+import { SteelMakingView, CastingCutView, Cutting1stView, Cutting2ndView, CorrectionView, ChargingView, ScrapView } from './FlowChart';
+import './FlowChartView.css';
+import FlowChartModel from '../Model/FlowChartModel';
 
 class FlowChartView extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            interval: null
+        }
+    }
+
+    componentDidMount() {
+        new FlowChartModel().drawLine(this.refs.canvas);
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        new FlowChartModel().drawLine(this.refs.canvas);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+            const ctx = this.refs.canvas.getContext("2d");
+            ctx.clearRect(0, 0, this.refs.canvas.width, this.refs.canvas.height);
+            new FlowChartModel().drawLine(this.refs.canvas);
+            new FlowChartModel().animatedLine(this.refs.canvas, this.props.result)
+    }
 
     render() {
         return (
             <div className="FlowChartSegment">
-                <Segment>
+                <Segment compact raised>
                     <Segment.Inline className="SegmentInline">
-                        <div className="SteelMaking">
-                            <SteelMakingView steelMaking={this.props.steelMaking} />
-                        </div>
+                        <canvas ref="canvas" width={1800} height={500} />
+                        <SteelMakingView steelMaking={this.props.steelMaking} />
                         <CastingCutView castingCut={this.props.castingCut} />
                         <Cutting1stView cutting1st={this.props.cutting1st} />
                         <Cutting2ndView cutting2nd={this.props.cutting2nd} />
@@ -27,11 +43,11 @@ class FlowChartView extends Component {
                         <ScrapView scrap={this.props.scrap} />
                         {
                             this.props.result.isSuccess === true ?
-                                <Progress className="Progress" percent={this.props.result.percent} indicating progress='percent'>
+                                <Progress percent={this.props.result.percent} indicating progress='percent'>
                                     {this.props.result.percent === 100 ? "정상처리 되었습니다." : ""}
                                 </Progress>
                                 :
-                                <Progress className="Progress" percent={this.props.result.percent} indicating error progress='percent'>
+                                <Progress percent={this.props.result.percent} indicating error progress='percent'>
                                     {this.props.result.percent === 100 ? "품질불량으로 Scrap처리 되었습니다." : ""}
                                 </Progress>
                         }
