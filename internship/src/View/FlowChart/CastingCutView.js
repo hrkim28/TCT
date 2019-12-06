@@ -10,18 +10,18 @@ class CastingCutView extends Component {
                     {
                         this.props.castingCut.result === true ?
                             <Step completed>
-                                <Icon name='credit card' />
+                                <Icon name='filter' />
                                 <Step.Content>
-                                    <Step.Title>주조</Step.Title>
-                                    <Step.Description>주조 및 1,2차 전단 판단</Step.Description>
+                                    <Step.Title>숙주주입</Step.Title>
+                                    <Step.Description>박테리아내부 벡터 주입</Step.Description>
                                 </Step.Content>
                             </Step>
                             :
                             <Step active>
-                                <Icon name='credit card' />
+                                <Icon name='filter' />
                                 <Step.Content>
-                                    <Step.Title>주조</Step.Title>
-                                    <Step.Description>주조 및 1,2차 전단 판단</Step.Description>
+                                    <Step.Title>숙주주입</Step.Title>
+                                    <Step.Description>박테리아내부 벡터 주입</Step.Description>
                                 </Step.Content>
                             </Step>}
                 </Step.Group>

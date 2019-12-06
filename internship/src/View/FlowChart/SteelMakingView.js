@@ -10,18 +10,18 @@ class SteelMakingView extends Component {
                     {
                         this.props.steelMaking.result === true ?
                             <Step completed>
-                                <Icon name='credit card' />
+                                <Icon name='code branch' />
                                 <Step.Content>
-                                    <Step.Title>제강</Step.Title>
-                                    <Step.Description>1,2차 정련/ 용선 제작</Step.Description>
+                                    <Step.Title>벡터결합</Step.Title>
+                                    <Step.Description>복제 세포와 벡터 결합</Step.Description>
                                 </Step.Content>
                             </Step>
                             :
                             <Step active>
-                                <Icon name='credit card' />
+                                <Icon name='code branch' />
                                 <Step.Content>
-                                    <Step.Title>제강</Step.Title>
-                                    <Step.Description>1,2차 정련/ 용선 제작</Step.Description>
+                                    <Step.Title>벡터결합</Step.Title>
+                                    <Step.Description>복제 세포와 벡터 결합</Step.Description>
                                 </Step.Content>
                             </Step>}
                 </Step.Group>

@@ -10,18 +10,18 @@ class CorrectionView extends Component {
                     {
                         this.props.correction.result === true ?
                             <Step completed>
-                                <Icon name='credit card' />
+                                <Icon name='th' />
                                 <Step.Content>
-                                    <Step.Title>정정</Step.Title>
-                                    <Step.Description>주편 및 슬라브 마감처리</Step.Description>
+                                    <Step.Title>숙주분리</Step.Title>
+                                    <Step.Description>숙주세포 분리 및 증식 세포 복제</Step.Description>
                                 </Step.Content>
                             </Step>
                             :
                             <Step active>
-                                <Icon name='credit card' />
+                                <Icon name='th' />
                                 <Step.Content>
-                                    <Step.Title>정정</Step.Title>
-                                    <Step.Description>주편 및 슬라브 마감처리</Step.Description>
+                                    <Step.Title>숙주분리</Step.Title>
+                                    <Step.Description>숙주세포 분리 및 증식 세포 복제</Step.Description>
                                 </Step.Content>
                             </Step>}
                 </Step.Group>

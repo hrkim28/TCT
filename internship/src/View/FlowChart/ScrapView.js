@@ -10,18 +10,18 @@ class ScrapView extends Component {
                     {
                         this.props.scrap.result === true ?
                             <Step completed>
-                                <Icon name='credit card' />
+                                <Icon name='trash alternate' />
                                 <Step.Content>
-                                    <Step.Title>Scrap</Step.Title>
-                                    <Step.Description>불량품 Scrap처리</Step.Description>
+                                    <Step.Title>실패</Step.Title>
+                                    <Step.Description>DNA 복제 실패</Step.Description>
                                 </Step.Content>
                             </Step>
                             :
                             <Step active>
-                                <Icon name='credit card' />
+                                <Icon name='trash alternate' />
                                 <Step.Content>
-                                    <Step.Title>Scrap</Step.Title>
-                                    <Step.Description>불량품 Scrap처리</Step.Description>
+                                    <Step.Title>실패</Step.Title>
+                                    <Step.Description>DNA 복제 실패</Step.Description>
                                 </Step.Content>
                             </Step>}
                 </Step.Group>

@@ -19,6 +19,7 @@ class FlowChartContainer extends Component {
                     onIncrement={this.props.onIncrement}
                     onRestart={this.props.onRestart} />
                 <FlowChartView
+                    searchParam={this.props.searchParam}
                     steelMaking={this.props.steelMaking}
                     castingCut={this.props.castingCut}
                     cutting1st={this.props.cutting1st}

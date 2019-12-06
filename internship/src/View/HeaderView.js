@@ -5,10 +5,10 @@ import './View.css';
 const HeaderView = () => (
     <div className="HeaderBackGround">
         <Header as='h2' color="blue" inverted>
-            <Icon name='settings' />
+            <Icon name='treatment' />
             <Header.Content>
-                Process Management
-      <Header.Subheader>Manage factory Process</Header.Subheader>
+                GM Management
+      <Header.Subheader>Manage Gene Modification</Header.Subheader>
             </Header.Content>
         </Header>
     </div>

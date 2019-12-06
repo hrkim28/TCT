@@ -10,18 +10,18 @@ class Cutting1stView extends Component {
                     {
                         this.props.cutting1st.result === true ?
                             <Step completed>
-                                <Icon name='credit card' />
+                                <Icon name='subscript' />
                                 <Step.Content>
-                                    <Step.Title>1차전단</Step.Title>
-                                    <Step.Description>1차 전단 및 주편 가공</Step.Description>
+                                    <Step.Title>세포증식</Step.Title>
+                                    <Step.Description>숙주내 복제 세포 자가증식</Step.Description>
                                 </Step.Content>
                             </Step>
                             :
                             <Step active>
-                                <Icon name='credit card' />
+                                <Icon name='subscript' />
                                 <Step.Content>
-                                    <Step.Title>1차전단</Step.Title>
-                                    <Step.Description>1차 전단 및 주편 가공</Step.Description>
+                                    <Step.Title>세포증식</Step.Title>
+                                    <Step.Description>숙주내 복제 세포 자가증식</Step.Description>
                                 </Step.Content>
                             </Step>}
                 </Step.Group>

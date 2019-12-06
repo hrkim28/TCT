@@ -15,16 +15,17 @@ class ControlView extends Component {
             },
             {
                 key: 'P',
-                text: '후판',
+                text: '일반',
                 value: 'P',
             },
             {
                 key: 'T',
-                text: '박판',
+                text: 'PCR',
                 value: 'T',
             },
         ]
 
+        
         return (
             <div className="ControlView">
                 <Form massive widths={10}>
@@ -32,17 +33,17 @@ class ControlView extends Component {
                         <Form.Field width={3}>
                             <Form.Select
                                 className="ControlSelect"
-                                fluid label='강종선택'
+                                fluid label='복제방식'
                                 value={searchParam.steelGrd}
                                 options={steelGrdOptions}
                                 onChange={(e, option) =>
                                     this.props.onChangeSteelGrd(option.value)} />
                         </Form.Field>
                         <Form.Field width={2}>
-                            <label>품질판정</label>
+                            <label>복제세포 상태</label>
                             <Radio
                                 className="ControlRadio"
-                                label='합'
+                                label='양호'
                                 name='radioGroup'
                                 value={true}
                                 checked={searchParam.qualityRes === true}
@@ -50,7 +51,7 @@ class ControlView extends Component {
                             />
                             <Radio
                                 className="ControlRadio"
-                                label='불합'
+                                label='불량'
                                 name='radioGroup'
                                 value={false}
                                 checked={searchParam.qualityRes === false}
@@ -58,7 +59,7 @@ class ControlView extends Component {
                             />
                         </Form.Field>
                         <Form.Field width={2}>
-                            <label>정련값</label>
+                            <label>복제조건</label>
                             <input
                                 className="ControlInput"
                                 type='range'

@@ -105,11 +105,11 @@ function progressSteelMaking(dispatch, time) {
 function progressRefineResTest(searchParam, dispatch, time) {
     if (searchParam.refinedRes < 3) {
         time += 1000;
-        setTimeout(() => { alert("부적합판정") }, time);
         setTimeout(() => { dispatch(onChangeNode([false,true,false,false,false,false,false,false])) }, time);
         time += 5000;
         setTimeout(() => { dispatch(steelMaking()) }, time);
         setTimeout(() => { dispatch(onChangePercent(0)) }, time);
+        setTimeout(() => { dispatch(onChangeNode([false,false,false,false,false,false,false,false])) }, time);
         time += 2000;
         setTimeout(() => { dispatch(steelMaking()) }, time);
         setTimeout(() => { dispatch(onChangePercent(10)) }, time);
@@ -182,5 +182,6 @@ function progressIsSuccess(searchParam, dispatch, time) {
         setTimeout(() => { dispatch(isSuccess(false)) }, time);
     }
     setTimeout(() => { dispatch(onChangePercent(100)) }, time);
+    setTimeout(() => { dispatch(onChangeNode([false,false,false,false,false,false,false,false])) }, time);
 }
 /********************************************************************************************/

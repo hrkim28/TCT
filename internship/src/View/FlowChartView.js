@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import { Segment, Progress } from 'semantic-ui-react'
 import { SteelMakingView, CastingCutView, Cutting1stView, Cutting2ndView, CorrectionView, ChargingView, ScrapView } from './FlowChart';
+import PortalView from './Utils/PortalView';
 import './FlowChartView.css';
 import FlowChartModel from '../Model/FlowChartModel';
 
 class FlowChartView extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            interval: null
-        }
-    }
-
     componentDidMount() {
         new FlowChartModel().drawLine(this.refs.canvas);
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-        new FlowChartModel().drawLine(this.refs.canvas);
+        
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-            const ctx = this.refs.canvas.getContext("2d");
-            ctx.clearRect(0, 0, this.refs.canvas.width, this.refs.canvas.height);
-            new FlowChartModel().drawLine(this.refs.canvas);
-            new FlowChartModel().animatedLine(this.refs.canvas, this.props.result)
+        clearInterval(this.timerID);
+        let isSuccess = true;
+        new FlowChartModel().drawPathLine(this.refs.canvas, this.props.searchParam.steelGrd);
+        if(prevProps.result.node[6]===true && this.props.result.node[6]===false) new FlowChartModel().drawIsSuccessLine(this.refs.canvas,isSuccess);
+        else if(prevProps.result.node[7]===true && this.props.result.node[7]===false) {
+            isSuccess = false;
+            new FlowChartModel().drawIsSuccessLine(this.refs.canvas,isSuccess);
+        }
+        this.timerID = new FlowChartModel().animatedLine(this.refs.canvas, this.props.result);
     }
 
     render() {
@@ -48,10 +44,11 @@ class FlowChartView extends Component {
                                 </Progress>
                                 :
                                 <Progress percent={this.props.result.percent} indicating error progress='percent'>
-                                    {this.props.result.percent === 100 ? "품질불량으로 Scrap처리 되었습니다." : ""}
+                                    {this.props.result.percent === 100 ? "복제세포 상태 불량으로 폐기처분 되었습니다." : ""}
                                 </Progress>
                         }
                     </Segment.Inline>
+                    <PortalView open = {this.props.result.node[1]}/>
                 </Segment>
             </div>
         );

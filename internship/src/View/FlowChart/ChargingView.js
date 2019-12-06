@@ -10,18 +10,18 @@ class ChargingView extends Component {
                     {
                         this.props.charging.result === true ?
                             <Step completed>
-                                <Icon name='credit card' />
+                                <Icon name='thumbs up outline' />
                                 <Step.Content>
-                                    <Step.Title>장입</Step.Title>
-                                    <Step.Description>주편 및 슬라브 장입</Step.Description>
+                                    <Step.Title>성공</Step.Title>
+                                    <Step.Description>DNA 복제 성공</Step.Description>
                                 </Step.Content>
                             </Step>
                             :
                             <Step active>
-                                <Icon name='credit card' />
+                                <Icon name='thumbs up outline' />
                                 <Step.Content>
-                                    <Step.Title>장입</Step.Title>
-                                    <Step.Description>주편 및 슬라브 장입</Step.Description>
+                                    <Step.Title>성공</Step.Title>
+                                    <Step.Description>DNA 복제 성공</Step.Description>
                                 </Step.Content>
                             </Step>}
                 </Step.Group>
